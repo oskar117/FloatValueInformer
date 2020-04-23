@@ -17,12 +17,18 @@ import java.lang.Thread;
 
 public class Main {
 
-    public static WebDriver driver;
-
+    //public static WebDriver driver;
 
     public static void main (String [] args) {
 
-        if (!SystemTray.isSupported()) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new MainFrame();
+            }
+        });
+
+        /*if (!SystemTray.isSupported()) {
             System.out.println("SystemTray is not supported");
             return;
         }
@@ -82,7 +88,6 @@ public class Main {
         } catch (AWTException e) {
             System.out.println("TrayIcon could not be added.");
         }
-
-
+*/
     }
 }
