@@ -34,10 +34,12 @@ public class TrayPopup extends PopupMenu {
         getItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                listener.startWatch();
-                /*DatabaseController db = new DatabaseController();
-                PageHandler ph = new PageHandler(db.getItems());
-                ph.watch();*/
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        listener.startWatch();
+                    }
+                }).start();
             }
         });
 

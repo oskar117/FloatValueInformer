@@ -26,6 +26,7 @@ public class PageHandler {
 
             for(Item x : items) {
                 page.open(x.getUrl());
+                System.out.println(x.getUrl());
 
                 try {
                     Thread.sleep(10000);

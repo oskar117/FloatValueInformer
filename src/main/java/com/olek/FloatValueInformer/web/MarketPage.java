@@ -25,18 +25,14 @@ public class MarketPage {
         List<WebElement> elementList = driver.findElements(By.className("floatDropTarget"));
 
         for(WebElement element : elementList) {
-            System.out.println(Float.parseFloat(element.getText()) + " : " + val);
-            if (Float.parseFloat(element.getText()) <= val) return true;
+
+            try {
+                if (Float.parseFloat(element.getText()) <= val) return true;
+            } catch (NumberFormatException e) {
+
+            }
         }
 
         return false;
-    }
-
-    public void getFloat() {
-        List<WebElement> test = driver.findElements(By.className("floatDropTarget"));
-
-        for(WebElement x : test) {
-            System.out.println("Float: " + x.getText());
-        }
     }
 }
