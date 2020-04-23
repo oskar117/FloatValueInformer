@@ -1,5 +1,6 @@
 package com.olek.FloatValueInformer;
 
+import com.olek.FloatValueInformer.gui.FormEvent;
 import com.olek.FloatValueInformer.model.Item;
 
 import java.util.List;

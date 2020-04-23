@@ -1,4 +1,4 @@
-package com.olek.FloatValueInformer;
+package com.olek.FloatValueInformer.web;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

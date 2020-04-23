@@ -1,5 +1,6 @@
-package com.olek.FloatValueInformer;
+package com.olek.FloatValueInformer.gui;
 
+import com.olek.FloatValueInformer.DatabaseController;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

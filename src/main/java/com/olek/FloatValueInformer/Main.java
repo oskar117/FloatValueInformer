@@ -1,19 +1,8 @@
 package com.olek.FloatValueInformer;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import com.olek.FloatValueInformer.gui.MainFrame;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.concurrent.TimeUnit;
-
-import java.lang.Thread;
 
 public class Main {
 

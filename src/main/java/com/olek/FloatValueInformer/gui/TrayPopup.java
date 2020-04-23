@@ -1,4 +1,6 @@
-package com.olek.FloatValueInformer;
+package com.olek.FloatValueInformer.gui;
+
+import com.olek.FloatValueInformer.web.MarketPage;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

@@ -1,4 +1,4 @@
-package com.olek.FloatValueInformer;
+package com.olek.FloatValueInformer.gui;
 
 import com.olek.FloatValueInformer.model.Item;
 
