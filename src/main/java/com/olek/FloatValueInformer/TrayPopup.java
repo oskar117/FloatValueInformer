@@ -6,12 +6,9 @@ import java.awt.event.ActionListener;
 
 public class TrayPopup extends PopupMenu {
 
-    private MainFrame rak;
+    private ShowButtonListener listener;
 
-    public TrayPopup(MainFrame mainFrame) {
-
-        //TODO tak być nie może
-        rak = mainFrame;
+    public TrayPopup() {
 
         MenuItem showItem = new MenuItem("Show");
         MenuItem getItem = new MenuItem("Get");
@@ -20,7 +17,7 @@ public class TrayPopup extends PopupMenu {
         showItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                rak.setVisible();
+                listener.showGui();
             }
         });
 
@@ -51,5 +48,9 @@ public class TrayPopup extends PopupMenu {
         add(showItem);
         add(getItem);
         add(exitItem);
+    }
+
+    public void setShowButtonListener(ShowButtonListener listener) {
+        this.listener = listener;
     }
 }

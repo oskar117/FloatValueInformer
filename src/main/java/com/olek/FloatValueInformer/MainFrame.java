@@ -28,7 +28,14 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
         setSize(WIDTH, HEIGHT);
 
-        popup = new TrayPopup(this);
+        popup = new TrayPopup();
+        popup.setShowButtonListener(new ShowButtonListener() {
+            @Override
+            public void showGui() {
+                setVisible(true);
+            }
+        });
+
         initFrame();
 
         itemList = new ItemList();
@@ -81,9 +88,5 @@ public class MainFrame extends JFrame {
         } catch (AWTException e) {
             System.out.println("TrayIcon could not be added.");
         }
-    }
-
-    public void setVisible() {
-        this.setVisible(true);
     }
 }
