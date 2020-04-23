@@ -1,10 +1,12 @@
 package com.olek.FloatValueInformer.gui;
 
-import com.olek.FloatValueInformer.web.MarketPage;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import com.olek.FloatValueInformer.DatabaseController;
+import com.olek.FloatValueInformer.web.MarketPage;
+import com.olek.FloatValueInformer.web.PageHandler;
 
 public class TrayPopup extends PopupMenu {
 
@@ -32,18 +34,10 @@ public class TrayPopup extends PopupMenu {
         getItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                MarketPage page = new MarketPage(MainFrame.driver);
-                page.open("https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Redline%20%28Field-Tested%29");
-
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                page.getFloat();
-                //JOptionPane.showConfirmDialog(null, "twoja stara");
-                System.out.println("Done");
+                listener.startWatch();
+                /*DatabaseController db = new DatabaseController();
+                PageHandler ph = new PageHandler(db.getItems());
+                ph.watch();*/
             }
         });
 

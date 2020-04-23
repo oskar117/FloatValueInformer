@@ -1,6 +1,7 @@
 package com.olek.FloatValueInformer.gui;
 
 import com.olek.FloatValueInformer.DatabaseController;
+import com.olek.FloatValueInformer.web.PageHandler;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -23,6 +24,7 @@ public class MainFrame extends JFrame {
     private TrayPopup popup;
     private ItemList itemList;
     private FormPanel formPanel;
+    private PageHandler pageHandler;
 
     public MainFrame() {
         super("FVI by Olek");
@@ -34,6 +36,12 @@ public class MainFrame extends JFrame {
             @Override
             public void showGui() {
                 setVisible(true);
+            }
+
+            @Override
+            public void startWatch() {
+                pageHandler = new PageHandler(databaseController.getItems());
+                pageHandler.watch();
             }
         });
 

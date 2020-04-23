@@ -10,6 +10,7 @@ import java.util.List;
 public class MarketPage {
 
     private WebDriver driver;
+    private String name;
 
     public MarketPage(WebDriver driver) {
         this.driver = driver;
@@ -18,6 +19,17 @@ public class MarketPage {
 
     public void open(String url) {
         driver.get(url);
+    }
+
+    public boolean isFloatReached(float val) {
+        List<WebElement> elementList = driver.findElements(By.className("floatDropTarget"));
+
+        for(WebElement element : elementList) {
+            System.out.println(Float.parseFloat(element.getText()) + " : " + val);
+            if (Float.parseFloat(element.getText()) <= val) return true;
+        }
+
+        return false;
     }
 
     public void getFloat() {
